@@ -95,7 +95,8 @@ create table addresses (
 		
 	insert into timesheet(worker_id, branches_id, start_time)
 	values (3, 1, now())
-	```
+```
+	
 	**Обновление данных:**
   ```
 	update timesheet
@@ -104,10 +105,12 @@ create table addresses (
 	```
 	
   **Результат:**
+  
   ```
 	select t.branches_id, worker_id, last_name, first_name, start_time, end_time, working_hours_fact
 	from timesheet t
 	left join workers using(worker_id)
 	where (start_time):: date = '2021.09.07' and working_hours_fact is NULL
   ```
+  
   ![image](https://user-images.githubusercontent.com/85709710/180170160-481899ae-1f00-464d-9c21-3843206a7ddc.png)
